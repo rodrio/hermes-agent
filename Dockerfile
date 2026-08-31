@@ -464,8 +464,8 @@ VOLUME [ "/opt/data" ]
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint-dispatch.sh" ]
 CMD [ ]
 
-# For Render execution
+# Define a porta padrão caso o Render não passe a variável de início
 ENV PORT=8080
 
-# Utilizando uvicorn diretamente
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT}"]
+# Executa através do shell para interpretar a variável ${PORT} do Render
+CMD ["sh", "-c", "exec python -m hermes_cli --port ${PORT}"]
