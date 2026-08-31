@@ -462,7 +462,6 @@ VOLUME [ "/opt/data" ]
 # wrapper-as-ENTRYPOINT, leading-dash args like `--version` would be
 # intercepted by /init's POSIX shell.
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint-dispatch.sh" ]
-CMD [ ]
 
 # Define a porta padrão caso o Render não passe a variável de início
 ENV PORT=8080
