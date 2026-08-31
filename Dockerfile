@@ -467,5 +467,5 @@ ENTRYPOINT [ "/opt/hermes/docker/entrypoint-dispatch.sh" ]
 ENV PORT=8080
 
 # Executa através do shell para interpretar a variável ${PORT} do Render
-#CMD ["sh", "-c", "exec python -m hermes_cli --port ${PORT}"]
-CMD [ ]
+CMD ["sh", "-c", "./docker/entrypoint.sh --port ${PORT}"]
+#CMD [ ]
