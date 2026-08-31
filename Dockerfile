@@ -463,3 +463,9 @@ VOLUME [ "/opt/data" ]
 # intercepted by /init's POSIX shell.
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint-dispatch.sh" ]
 CMD [ ]
+
+# For Render execution
+ENV PORT=8080
+
+# Utilizando uvicorn diretamente
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT}"]
